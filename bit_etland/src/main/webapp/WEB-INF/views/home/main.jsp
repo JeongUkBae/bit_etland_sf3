@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <jsp:include page="top.jsp"/>
     <link rel="stylesheet" href="${css}/home/main.css" />
-	<div class="grid-contect-container">
-	  <div class="grid-item" id="item1"><b>고객 전용</b><br>
+	<div class="grid-contect-container"  >
+	  <div class="grid-item" id="item1"><b>고객 전용 </b><br>
 	    <a href="#" id="cust_join">회원가입</a>
 	    <a href="#" id="cust_login">로 그 인</a><br>
 	  </div>

@@ -16,6 +16,10 @@
 		<tiles-version>3.0.5</tiles-version>
 		<mybatis-version>3.4.1</mybatis-version>
 		<mybatis-spring-version>1.3.0</mybatis-spring-version>
+		<mysql-version>5.1.6</mysql-version>
+		<commons-el-version>1.0</commons-el-version>
+		<commons-fileupload-version>1.3.1</commons-fileupload-version>
+		<commons-io-version>2.4</commons-io-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -77,6 +81,13 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-jdbc</artifactId>
 		    <version>${org.springframework-version}</version>
+		</dependency>
+			
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql-version}</version>
 		</dependency>
 			
 				
@@ -212,6 +223,27 @@
 		    <groupId>org.apache.tiles</groupId>
 		    <artifactId>tiles-el</artifactId>
 		    <version>${tiles-version}</version>
+		</dependency>
+		
+		<!-- commons-el -->
+		<dependency>
+		    <groupId>commons-el</groupId>
+		    <artifactId>commons-el</artifactId>
+		    <version>${commons-el-version}</version>
+		</dependency>
+		
+		<!-- commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>${commons-fileupload-version}</version>
+		</dependency>
+		
+		<!-- commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>${commons-io-version}</version>
 		</dependency>
 		
 		
