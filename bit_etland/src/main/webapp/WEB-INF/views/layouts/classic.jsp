@@ -17,29 +17,24 @@
 	<body>
 
 		<div id="wrapper" class="grid-full-container container-fluid">
-	        <table style="width: 100%">
-			      <tr>
-			        <td >
-			          <tiles:insertAttribute name="top" />
-			        </td>
-			      </tr>
-			      <tr>
-			        <td>
+	       <div class="grid-top">
+	       		  <tiles:insertAttribute name="top" />
+		 	</div>
+		 	<div id="grid" class="grid-full-container container-fluid">
+			    <div class="grid-item">
 			          <tiles:insertAttribute name="nav" />
-			        </td>
-			      </tr>
-			      <tr>
-			        <td>
-			          <tiles:insertAttribute name="content" />
-			        </td>
-			      </tr>
-			      <tr>
-			      <tr>
-			        <td >
+			  	</div>
+			      <div class="grid">
+			        	 <div class="grid-item">
+			        		  <tiles:insertAttribute name="content" />
+			        	</div>
+			      </div>
+			  </div>
+			      <div class="grid">
+					<div class="grid-bottom">
 			          <tiles:insertAttribute name="bottom" />
-			        </td>
-			      </tr>
-	    	</table>
+			          </div>
+				  </div>
 		</div>
 
 	</body>
