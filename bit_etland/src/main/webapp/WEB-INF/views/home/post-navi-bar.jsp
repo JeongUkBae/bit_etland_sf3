@@ -41,25 +41,9 @@
 		<li><a href="#">공급업체</a></li>
 	</ul>
 </div>
-		<div class="col-row-3 col-md-offset-3">
-			 <a  href="#" class="count active" >${emp.name} 님 환영합니다.</a>
-							<div>
-							<ul>
-							<li id="li_nav_7">
-								
-									<c:choose>
-		  								<c:when test="${cus.customerName eq cus.customerName}">
-		  									<a  href="#" class="count active" >${cus.customerName} 님 환영합니다.</a>
-		  								</c:when>
-		  								<c:otherwise>
-		  									<a href="#" class="count active" >${emp.name} 님 환영합니다.</a>
-		  								</c:otherwise>
-		  							</c:choose>
-
-								</li>
-								</ul>
-							</div>	
-						</div>
+		
+			 	<a  href="#" class="count active" >${user.customerName} 님 환영합니다.</a>
+							
 
 	</div>
 </div>

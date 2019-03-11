@@ -28,7 +28,7 @@
 		<div class="col-md-1"> </div>
 		<div class="col-md-1"> </div>
 		<div class="col-md-3 col-md-offset-3">
-		 	<ul><li><a href="#" class="count" >${emp.name} 님 환영합니다.</a></li></ul>
+		 	<ul><li><a href="#" class="count" >${user.name} 님 환영합니다.</a></li></ul>
 		</div>
 
 	</div>

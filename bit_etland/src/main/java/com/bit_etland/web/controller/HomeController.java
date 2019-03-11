@@ -15,7 +15,6 @@ import com.bit_etland.web.proxy.ContextProxy;
 
 
 @Controller
-
 public class HomeController {
 	static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired ContextProxy pxy;
