@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../home/top.jsp"/>
+
 
 
 <link rel="stylesheet" 
@@ -46,14 +46,14 @@
 				상세주소 : <br />
   		</div>
  	 <div class="grid-item" id="content">
-  				${cust.customerID}<br />
-				${cust.customerName}<br />
-				${cust.ssn}<br />
+  				${user.customerID}<br />
+				${user.customerName}<br />
+				${user.ssn}<br />
 				남 <br />
-				${cust.phone}<br />
-				${cust.postalcode}<br />
-				${cust.city}<br />
-				${cust.address}<br />
+				${user.phone}<br />
+				${user.postalcode}<br />
+				${user.city}<br />
+				${user.address}<br />
   		</div>
  	 </div>
 	  
@@ -70,10 +70,10 @@
 	</div>
 </div>
 
-<jsp:include page="../home/bottom.jsp"/>
+
 <script>
 $('#update_btn').attr('style','cursor:pointer').click(function(){
-	location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customer_id=${cust.customerID}');
+	location.assign('${ctx}/move/customer/update');
 });
 $('#list_btn').attr('style','cursor:pointer').click(function(){
 	location.assign('${ctx}/customer.do?cmd=cust_list&page=list');

@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bit_etland.web.mapper.CustomerMapper">
-  <select id="selectCustomer" resultType="com.bit_etland.web.domain.CustomerDTO">
+<mapper namespace="com.bit_etland.web.mapper.ImageMapper">
+  <select id="selectImage" resultType="com.bit_etland.web.domain.ImageDTO">
     SELECT 
-    		CUSTOMER_ID customerID,
-        	CUSTOMER_NAME customerName, 
-        	PASSWORD, 
-        	SSN, 
-        	PHONE,
-        	PHOTO, 
-        	CITY, 
-        	ADDRESS, 
-        	POSTALCODE
-    FROM CUSTOMERS 
-    WHERE CUSTOMER_ID LIKE #{customerID} 
-    	AND PASSWORD LIKE #{password}
+    		IMG_SEQ imgSeq,
+        	IMG_NAME imgName, 
+        	IMG_EXTENTION imgExtention, 
+        	OWNER owner
+    FROM IMAGES 
+    WHERE IMG_SEQ LIKE #{imgSeq} 
+
   </select>
-  <insert id="insertCustomer" parameterType="com.bit_etland.web.domain.CustomerDTO"
+  <!-- <insert id="insertImage" parameterType="com.bit_etland.web.mapper.ImageMapper"
   			flushCache="true" statementType="PREPARED" timeout="20">
   		  INSERT INTO CUSTOMERS (CUSTOMER_ID,
         					   CUSTOMER_NAME, 
@@ -39,7 +34,7 @@
         						#{postalcode})
   </insert>
 
-    <update id="updateCustomer" parameterType="com.bit_etland.web.domain.CustomerDTO" 
+    <update id="updateImage" parameterType="com.bit_etland.web.mapper.ImageMapper" 
     		flushCache="true" statementType="PREPARED" timeout="20"> 
  		UPDATE CUSTOMERS
  			SET PASSWORD = #{password}, 
@@ -48,14 +43,15 @@
  				ADDRESS = #{address},
  				POSTALCODE = #{postalcode} 
  		  WHERE CUSTOMER_ID LIKE #{customerID}
+ 			AND PASSWORD LIKE #{password}
  
  	</update>
   
- 	<delete id="deleteCustomer" parameterType="com.bit_etland.web.domain.CustomerDTO" 
+ 	<delete id="deleteImage" parameterType="com.bit_etland.web.mapper.ImageMapper" 
  			flushCache="true" statementType="PREPARED" timeout="20"> 
   		DELETE FROM CUSTOMERS WHERE LIKE CUSTOMER_ID LIKE #{customerID}
                                            AND PASSWORD LIKE #{password}	
   			
   			
- 	</delete>
+ 	</delete> -->
 </mapper>
