@@ -16,49 +16,49 @@
 			<tiles:insertAttribute name="top" />
 			</div>
 			
-					<tiles:insertAttribute name="navibar" />
+					<tiles:insertAttribute name="navibar"  ignore="true"/>
 
-			<div class="intro2">
-			<tiles:insertAttribute name="intro2" ignore="true" />
+		
+			<tiles:insertAttribute name="intro2" />
 			</div>
 			
-			<div class="about">
+			
 			<tiles:insertAttribute name="about" ignore="true"/>
 			</div>
 			
-			<div class="parllax">
+			
 			<tiles:insertAttribute name="parllax" ignore="true"/>
-			</div>
 			
-			<div class="service">
+			
+			
 			<tiles:insertAttribute name="service" ignore="true"/>
-			</div>	
 			
-			<div class="works">
+			
+			
 			<tiles:insertAttribute name="works" ignore="true"/>
-			</div>
 			
-			<div class="parllax2">
+			
+			
 			<tiles:insertAttribute name="parllax2" ignore="true"/>
-			</div>
 			
-			<div class="team">
+			
+			
 			<tiles:insertAttribute name="team" ignore="true"/>
-			</div>
 			
-			<div class="contact">
+			
+			
 			<tiles:insertAttribute name="contact" ignore="true"/>
-			</div>
 			
-			<div class="bottom">
+			
+			
 			<tiles:insertAttribute name="bottom" ignore="true"/>
-			</div>
 			
-			<div >
+			
+			
 			<tiles:insertAttribute name="footer" ignore="true"/>
-			</div>
-		</div>
-	</div>
+			
+		
+
   <!-- js -->
   <script src="${js}jquery.js"></script>
   <script src="${js}bootstrap.min.js"></script>
