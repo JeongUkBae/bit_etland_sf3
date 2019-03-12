@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <!-- 
 	@Author : 배정욱 gt1854@gmail.com
@@ -37,7 +37,7 @@
                   </div>
                   <div class="col-sm-12 col-md-5">
                     <div class="screenshot wow bounceInRight">
-                      <img src="img/screenshots/1.png" class="img-responsive" alt="" />
+                      <img src="${img}/screenshots/1.png" class="img-responsive" alt="" />
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@
                   </div>
                   <div class="col-sm-12 col-md-5">
                     <div class="screenshot wow bounceInRight">
-                      <img src="img/screenshots/2.png" class="img-responsive" alt="" />
+                      <img src="${img}/screenshots/2.png" class="img-responsive" alt="" />
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@
                   </div>
                   <div class="col-sm-12 col-md-5">
                     <div class="screenshot wow bounceInRight">
-                      <img src="img/screenshots/3.png" class="img-responsive" alt="" />
+                      <img src="${img}/screenshots/3.png" class="img-responsive" alt="" />
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <!-- 
 	@Author : 배정욱 gt1854@gmail.com
@@ -22,7 +22,7 @@
       </div>
       <div class="row wow fadeInUp">
         <div class="col-md-6 about-img">
-          <img src="img/about-img.jpg" alt="">
+          <img src="${img}/about-img.jpg" alt="">
         </div>
 
         <div class="col-md-6 content">
