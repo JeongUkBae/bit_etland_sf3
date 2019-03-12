@@ -7,6 +7,5 @@
 	@Desc:
  -->
  
- <div>
+
  	<tiles:insertAttribute name="no_template" />
- </div>

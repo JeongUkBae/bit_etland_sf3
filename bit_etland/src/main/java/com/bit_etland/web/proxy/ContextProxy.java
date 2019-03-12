@@ -18,9 +18,9 @@ public class ContextProxy {
 	public void setContext() {
 		String ctx = request.getContextPath();
 		session.setAttribute("ctx", ctx);
-		session.setAttribute("css", ctx + "/resources/css/");
-		session.setAttribute("js", ctx + "/resources/js/");
-		session.setAttribute("img", ctx + "/resources/img/");
+		session.setAttribute("css", ctx + "/resources/css");
+		session.setAttribute("js", ctx + "/resources/js");
+		session.setAttribute("img", ctx + "/resources/img");
 		session.setAttribute("time", new SimpleDateFormat("yyyy 년 MM 월 dd 일  hh:mm:ss")
 														.format(new Date()));
 	}
