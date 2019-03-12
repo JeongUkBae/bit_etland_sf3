@@ -47,7 +47,7 @@ public class CustomerController {
 		session.setAttribute("image", img);
 		System.out.println("이미지  결과 : "+img.toString());
 		
-		return (cust != null) ? "public:customer/detail.tiles":"public:home/main.tiles";
+		return (cust != null) ? "customer:layouts/customer.tiles":"public:home/main.tiles";
 	}
 	@RequestMapping(value="/detail")
 	public String detail(@RequestParam("customerID")String customerID, Model model) {
@@ -56,7 +56,7 @@ public class CustomerController {
 		cust = customerservice.retrieveCustomer(cust);
 		model.addAttribute("cust", cust);
 
-		return "public:customer/detail.tiles";
+		return "customer:customer/contact.tiles";
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.POST)
