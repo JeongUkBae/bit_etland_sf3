@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+ <div class="grid">
+	<div class="grid-item">
 	<div class="grid-contect-container"  >
 	  <div class="grid-item" id="item1"><b>고객 전용 </b><br>
 	    <a href="#" id="cust_join">회원가입</a>
@@ -23,7 +25,8 @@
 
 	  </div>
 	</div>
-
+	  </div>
+	</div>
 <script src="${js}/oop.js"></script>
 <script>
 	$('#cust_join').click(function(){
