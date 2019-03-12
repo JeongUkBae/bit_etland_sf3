@@ -7,9 +7,7 @@
 <link rel="stylesheet" 
 	href="${css}/customer/list.css" />
 <link rel="stylesheet" href="${css}/customer/navi_bar.css" />
-<div class="grid-item" id="navi_bar">
-	<jsp:include page="../home/post-navi-bar.jsp"/>
-	</div>
+  <section id="detail" class="home-section bg-white">
 <div class="grid-item" id="content">
 	<div class="grid-item" id="content">
  	<h1><font style="font-size: 30px">검색 결과</font></h1>
@@ -69,7 +67,7 @@
 		
 	</div>
 </div>
-
+  </section>
 
 <script>
 $('#update_btn').attr('style','cursor:pointer').click(function(){

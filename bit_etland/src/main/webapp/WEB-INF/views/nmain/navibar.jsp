@@ -25,7 +25,7 @@
       <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li class="current"><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#detail">detail</a></li>
           <li><a href="#services">Service</a></li>
           <li><a href="#portfolio">Works</a></li>
           <li><a href="#team">Team</a></li>

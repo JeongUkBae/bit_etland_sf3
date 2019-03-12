@@ -25,18 +25,18 @@
 	   	<put-attribute name="top" value="/WEB-INF/views/home/top.jsp" />
 	    <put-attribute name="navibar" value="/WEB-INF/views/nmain/navibar.jsp" />
 	    <put-attribute name="intro2" value="/WEB-INF/views/nmain/intro2.jsp" />
-	    <put-attribute name="about" value="/WEB-INF/views/nmain/about.jsp" />
+	    <put-attribute name="about" value="" />
 	    <put-attribute name="parllax" value="/WEB-INF/views/nmain/parllax.jsp" />
 	    <put-attribute name="service" value="/WEB-INF/views/nmain/service.jsp" />
 	    <put-attribute name="works" value="/WEB-INF/views/nmain/works.jsp" />
 	    <put-attribute name="parllax2" value="/WEB-INF/views/nmain/parllax2.jsp" />
 	    <put-attribute name="team" value="/WEB-INF/views/nmain/team.jsp" />
-	    <put-attribute name="contact" value="" />
+	    <put-attribute name="contact" value="/WEB-INF/views/nmain/contact.jsp" />
 	    <put-attribute name="bottom" value="/WEB-INF/views/nmain/bottom.jsp" />
 	    <put-attribute name="footer" value="/WEB-INF/views/nmain/footer.jsp" />
   </definition>
     <definition name="customer:*/*.tiles" extends="customer">
-    <put-attribute name="contact" value="/WEB-INF/views/{1}/{2}.jsp" />
+    <put-attribute name="about" value="/WEB-INF/views/{1}/{2}.jsp" />
   </definition>
   
     <definition name="employee" template="/WEB-INF/views/layouts/employee.jsp">
