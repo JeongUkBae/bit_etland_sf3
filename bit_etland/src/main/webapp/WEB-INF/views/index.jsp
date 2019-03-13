@@ -42,7 +42,6 @@
 	</head>
 	
 	<body>
-	 <div id="wrapper" class="grid-full-container container-fluid"> 
 	      
 		<div class="top" id="top" >
 			
@@ -71,14 +70,17 @@
 					          <li><a href="#portfolio">Works</a></li>
 					          <li><a href="#team">Team</a></li>
 					          <li><a href="#contact">Contact</a></li>
-					          <li><a href="#signin" id="signin">signin</a></li>
+					          <li><a href="#signin" id="signin" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">signin</a></li>
 					        </ul>
 					     </div>
 					</div>
  				</nav>
 			</div>
-			
-			
+			<div class="content" id="content">
+				<section id="content">
+				
+				</section>
+			</div>
 			<div class="intro2" id="intro2">
 				<section id="intro">
 				    <div class="intro-container">
@@ -600,12 +602,11 @@
 				  <script src="${js}/app.js"></script>
 				  <script src="${js}/index.js"></script>
 				</div>
-		</div> 
+
 	
 
 	</body>
 	<script>
-		app.context.init('${ctx}')
-	
+		app.path.init('${ctx}')
 	</script>
 </html>
