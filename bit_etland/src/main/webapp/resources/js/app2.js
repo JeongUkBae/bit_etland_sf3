@@ -1,34 +1,26 @@
 var app = app || {};
 app.path = (()=>{
-	var init=x=>{
+	var init = (x)=>{
 		app.session.init(x);
-		alert(app.$.ctx());
 		onCreate();
 	};
-	var onCreate=()=>{
-		setContentView();
+	var onCreate =()=>{
+		setContextView();
 	};
-	var setContentView=()=>{};
-	return {init:init}
+	var setContextView=()=>{};
+	return {init:init};
 })();
 
 app.session =(()=>{
-	var init=x=>{
+	var init =(x)=>{
 		onCreate(x);
 	};
-	var onCreate=()=>{
+	var onCreate =(x)=>{
 		sessionStorage.setItem('ctx',x);
-		sessionStorage.setItem('js',x+'/resources/js');
-		sessionStorage.setItem('img',x+'/resources/img');
-		sessionStorage.setItem('css',x+'/resources/css');
 	};
+	return {init:init};
 })();
 
-app.$ = (()=>{
-	return {
-		ctx:()=>{return sessionStorage.getItem('ctx')},
-		js:()=>{return sessionStorage.getItem('js')},
-		img:()=>{return sessionStorage.getItem('img')},
-		css:()=>{return sessionStorage.getItem('css')},
-	}
-})();
+app.$ ={
+		ctx : ()=>{return sessionStorage.getItem('ctx')}
+};
