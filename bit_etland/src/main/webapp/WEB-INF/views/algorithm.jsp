@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="col-sm-9">
+    <div class="col-sm-9" id="hs">
       <h4><small>RECENT POSTS</small></h4>
       <hr>
       <h2>I Love Food</h2>

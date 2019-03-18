@@ -31,7 +31,6 @@ public class ImageServiceImpl implements ImageService{
 
 	@Override
 	public ImageDTO searchImage(ImageDTO img) {
-		
 		return imagemapper.selectImage(img);
 	}
 
