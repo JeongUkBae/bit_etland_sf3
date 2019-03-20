@@ -12,64 +12,52 @@ algo = (()=>{
 	};
 	let setContentView =()=>{
 		$.getScript($.js()+'/compo.js',()=>{
-		//	$('').html($$.div({id:'nav',clazz:'nav nav-pills nav-stacked'}))
-		//	 $('li').html($$.li())
-			 $('#nav').children().eq(0).html($$.a({id:'seq', url:'#'}).text('수열'))
-			 $('#nav').children().eq(1).html($$.a({id:'math', url:'#'}).text('수학'))
-			 $('#nav').children().eq(2).html($$.a({id:'sort', url:'#'}).text('배열'))
-			 $('#nav').children().eq(3).html($$.a({id:'coll', url:'#'}).text('자료구조'))
-			 $('#nav').append($$.li({id:'', value:''}))
-			 		  	.children().eq(4).html($$.a({id:'app', url:'#'}).text('응용'));
-			 //수열 1 - 1+2+3+4+…+100까지의 합계 (do~while) 
-			 $('#hs').children('h2').eq(0).html($$.hs({size:'2'})
-					 		.text('등차 수열의 합계'));
-			 $('#hs').children('h2').eq(1).html($$.hs({size:'2'})
-					 		.text('등비 수열의 합계'));
-			 $('p#result_1').html($$.form({id: 'form'}));
-			 inputForm();
-			 $('p#result_2').html($$.form({id: 'form'}));
-			 inputForm();
-			 $('#ch_h').html($$.span({id:'bi_btn_1'}).addClass('label label-danger cursor').text('결과'))
-			 $('#ch_h').append($$.span({id:'bi_btn_2'}).addClass('label label-primary cursor').text('리셋'))
-			 //html($$.span({id:'bi_btn_1'}).addClass('label label-danger').text('결과'))
-			// $('span#bi_btn_1').append($$.span({id:'bi_btn_2'}).addClass('label label-primary').text('리셋'))
-			 
-			 $('#answer_btn_1').text('결과').addClass('cursor').click(()=>{
-				 $.ajax({
-					url : $.ctx()+'/algo/seq/1',
-					type : 'post',
-					data : JSON.stringify({start:$('#start').val(), end:$('#end').val(),diff:$('#diff').val()}),
-					dateType : 'json',
-					contentType : "application/json; charset=utf-8",
-					success : d=>{
-						alert('넘어온 문제번호:'+d.result);
-						$("#hs").children('p').eq(0).html($$.p().text('답은 :: '+d.result));
-					},
-					error : e=>{
-						alert('AJAX 실패');
-					}
-				 });
+			 nav();
+			 remove();
+			 questions('등차수열');
+
+			 $('#hs').prepend($$.div({id:'right_start'}));
+			 $('#leave_a_comment').before('<div id="right_end"/>')
+			 $('#right_start').nextUntil('#right_end').wrapAll('<div id="new_div"></div>');
+			 var str = $('#new_div').html();
+			 $('#new_div').remove();
+			 $('#right_end').remove();
+			 alert(str);
+			 let arr =[
+				 {id:'a', val:'등차수열'},
+				 {id:'b', val:'등비수열'},
+				 {id:'c', val:'팩토리수열'},
+				 {id:'d', val:'파보나치수열'}
+			 ];
+			 $.each(arr,(i,j)=>{
+				 $('#right_start').append(str);
+				 $('#question').attr('id','question_'+j.id);
+				 $('#question_'+j.id).text(j.val);
+				  alert(j.id+' , '+j.val);
+				  
 			 });
 			 
-			 $('#answer_btn_2').text('리셋').addClass('cursor').click(()=>{
-				 inputForm();
-			 });
-			 
-			 
-			 
-			 
-/*			 $('#answer_btn_2').text('Reset').addClass('cursor')
-			 $("#hs").children('p').eq(0).html($$.div({id:'content_1'}));
-			 $('#content_1').append($$.form({id:'reset_form'}).append($$.label({name:''})).text('새로운 값')
-					 .append('</br>')
-					 	.append($$.input({type:'text',id:'start_num'})).append('</br>')
-					 	.append($$.input({type:'text',id:'end_num'})).append('</br>')
-					 	.append($$.input({type:'text',id:'diff_num'})).append('</br>') )*/
 		 		
 		})
 	};
+
+	let remove=()=>{
+		 $('#rm_start').before('<div id="del_start"/>')
+		 $('#rm_end').after('<div id="del_end"/>')
+		 $('#del_start').nextUntil('#del_end').wrap('del').remove();
+	}
+	
+	let nav =()=>{
+		 $('#nav').children().eq(0).html($$.a({id:'seq', url:'#'}).text('수열'))
+		 $('#nav').children().eq(1).html($$.a({id:'math', url:'#'}).text('수학'))
+		 $('#nav').children().eq(2).html($$.a({id:'sort', url:'#'}).text('배열'))
+		 $('#nav').children().eq(3).html($$.a({id:'coll', url:'#'}).text('자료구조'))
+		 $('#nav').append($$.li({id:'', value:''}))
+		 		  	.children().eq(4).html($$.a({id:'app', url:'#'}).text('응용'));
+	}
+	
 	let inputForm =()=>{
-		$('p#result_1').html($$.form({id: 'form'}));
+		$('p#result_1').html($$.form({id:'form'}));
 		 	$('form#form').html($$.div({id: 'div_1'}).addClass('form-group'));
 			$('div#div_1').html($$.label({name: 'lab_1'}).text('시작값 :'))
 						.append($$.input({type:'text', id: 'start'}));
@@ -81,8 +69,30 @@ algo = (()=>{
 						.append($$.input({type:'text', id: 'diff'}));
 			
 	}
-	let ajaxResult =()=>{
 
+	let questions =(x)=>{
+		 $('#question').text(x);
+		 inputForm();
+		 $('#answer_btn_1').text('결과').addClass('cursor').click(()=>{
+			 $.ajax({
+				url : $.ctx()+'/algo/seq/1',
+				type : 'post',
+				data : JSON.stringify({start:$('#start').val(), end:$('#end').val(),diff:$('#diff').val()}),
+				dateType : 'json',
+				contentType : "application/json; charset=utf-8",
+				success : d=>{
+					alert('넘어온 문제번호:'+d.result);
+					$("#hs").children('p').eq(0).html($$.p().text('답은 :: '+d.result));
+				},
+				error : e=>{
+					alert('AJAX 실패');
+				}
+			 });
+		 });
+		 
+		 $('#answer_btn_2').text('리셋').addClass('cursor').click(()=>{
+			 inputForm();
+		 });
 	}
 	
 	

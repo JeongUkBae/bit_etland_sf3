@@ -10,7 +10,7 @@ $$ ={
 			return $('<li id='+x.id+'>');
 		},
 		hs : x=>{
-			return $('<h'+x.size+'/>');
+			return $('<h'+x.size+' />');
 		},
 		
 		p : x=>{
@@ -28,6 +28,9 @@ $$ ={
 		},
 		span : x=>{
 			return $('<span id='+x.id+'></span> ')
+		},
+		small : x=>{
+			return $('<small>'+x.name+'</small>')
 		}
 		
 }
