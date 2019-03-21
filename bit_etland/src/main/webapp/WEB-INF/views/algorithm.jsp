@@ -70,15 +70,15 @@
       <hr>
       <h2 id="question">I Love Food</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
-      <h5><span id="answer_btn_1" class="label label-danger">Food</span> <span id="answer_btn_2" class="label label-primary">Ipsum</span></h5><br>
-      <p id="result_1">Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h5 class="buttons"><span id="answer_btn" class="label label-danger">Food</span> <span id="reset_btn" class="label label-primary">Ipsum</span></h5><br>
+      <p id="result">Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <br><br id="ap">
       
       <h4 id="rm_start"><small>RECENT POSTS</small></h4>
       <hr>
       <h2>Officially Blogging</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
-      <h5 id="ch_h"><span id="answer_btn_1_1" class="label label-success">Lorem</span></h5><br>
+      <h5 id="ch_h"><span class="label label-success">Lorem</span></h5><br>
       <p id="result_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <hr id="rm_end">
 
@@ -129,7 +129,8 @@
 <footer class="container-fluid">
   <p>Footer Text</p>
 </footer>
-  <script src="${js}/algorithm.js"></script>
+  <script src="${js}/algorithm/algorithm.js"></script>
+  <script src="${js}/algorithm/sequence.js"></script>
 </body>
 <script>
 	algo.init('${ctx}');

@@ -10,7 +10,7 @@ $$ ={
 			return $('<li id='+x.id+'>');
 		},
 		hs : x=>{
-			return $('<h'+x.size+' />');
+			return $('<h'+x.size+' id='+x.id+'/>');
 		},
 		
 		p : x=>{
