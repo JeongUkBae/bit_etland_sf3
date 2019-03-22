@@ -1,10 +1,14 @@
 function sequence(){
-	_sequence.nav();
 	_sequence.remove();
-	_sequence.questions('등차수열');
 	
-	
-		 $('#hs').prepend($$.div({id:'right_start'}));
+	 $('#math').addClass('cursor').click(()=>{
+		alert('math 누름!!!');
+		math();
+		algo.setContentView('math');
+		
+		
+	 })
+		 $('#right_content').prepend($$.div({id:'right_start'}));
 		 $('#leave_a_comment').before('<div id="right_end"/>')
 		 $('#right_start').nextUntil('#right_end').wrapAll('<div id="new_div"></div>');
 		 let str = $('#new_div').html();
@@ -12,35 +16,83 @@ function sequence(){
 		 $('#right_end').remove();
 		 alert(str);
 		 let arr =[
-			 {id:'a', val:'등차수열의 합계', index:'1'},
-			 {id:'b', val:'등비수열의 합계', index:'2'},
-			 {id:'c', val:'팩토리수열의 합계', index:'3'},
-			 {id:'d', val:'파보나치수열의 합계', index:'4'}
+			 {id:'ari', val:'등차수열의 합계'},
+			 {id:'geo', val:'등비수열의 합계'},
+			 {id:'fac', val:'팩토리수열의 합계'},
+			 {id:'fibo', val:'파보나치수열의 합계'}
 		 ];
 		 $.each(arr,(i,j)=>{
+			 let GID = Math.floor(Math.random()*10000) +1; // 5656
+			 let _GID = '#'+GID;
+			 $('<div id="'+GID+'">'+str+'</div>').appendTo('#right_start');
 			 
-			 $(str).appendTo('#right_start')
-			 $('#question').attr('id','question_'+j.id);
-			 $('#question_'+j.id).text(j.val);
-			 $('.buttons').empty();
-			_sequence.inputForm(j); 
+			 let POST = GID+"_POST";
+			 let _POST = '#'+POST;
+			 $(_GID+' h4').attr('id',POST);
+			 
+			 let TITLE = GID+"_TITLE";
+			 let _TITLE = '#'+TITLE;
+			 $(_GID+' h2').attr('id',TITLE);
+			 
+			 let DATE = GID+'_DATE';
+			 let _DATE = '#'+DATE;
+			 $(_TITLE).siblings('h5').eq(0).attr('id',DATE);
+			 
+			 let BTN = GID+'_BTN';
+			 let _BTN = '#'+BTN;
+			 $(_TITLE).siblings('h5').eq(1).attr('id',BTN);
+			 
+			 let INPUT = GID+'_INPUT';
+			 let _INPUT = '#'+INPUT;
+			 $(_GID+' p').attr('id',INPUT);
+			 $(_TITLE).text(j.val);
+			 $(_BTN).empty();
+			 $(_INPUT).empty();
+			 let x=[];
+			 switch(arr,j.id){
+			 case 'ari' :  x = [{id:GID+'_start', txt:'시작값'},
+			 	  {id:GID+'_end', txt:'한계값'},
+			 	  {id:GID+'_diff', txt:'공차'}];
+			 	break;
+			 case 'geo' :  x = [{id:GID+'_start', txt:'시작값'},
+			 	  {id:GID+'_end', txt:'한계값'},
+			 	  {id:GID+'_diff', txt:'공비'}];
+			 	break;
+			 case 'fac' :  x = [{id:GID+'_start', txt:'시작값'},
+			 	  {id:GID+'_end', txt:'한계값'},
+			 	  {id:GID+'_diff', txt:'수열'}];
+			 	break;
+			 case 'fibo' :  x = [{id:GID+'_start', txt:'시작값'},
+			 	  {id:GID+'_end', txt:'한계값'},
+			 	  {id:GID+'_diff', txt:'누승'}];
+			 	break;
+			 }
+			
+			 
+			 $(_sequence.inputForm(x)).appendTo(_INPUT);
+			 $('#del_start').remove();
+			 $('#del_end').remove();
+			 
+			 
 			 $('<span class="label label-danger"></span>')
-			 	.text('결과').addClass('cursor').appendTo('.buttons')
-			 	.click(()=>{
-			 		let data = {start : $('#start').val(),
-			 					end : $('#end').val(),
-			 					diff : $('#diff').val()};
-			 		alert('일단 결과 클릭됨 '+$('#start').val());
+			 	.text('결과').addClass('cursor').attr('name',j.id).appendTo(_BTN)
+			 	.click(function(){
+			 		let that = $(this).attr('name');
+			 		let data = {start : $(_GID+'_start').val(),
+			 					end : $(_GID+'_end').val(),
+			 					diff : $(_GID+'_diff').val()};
+			 		alert('일단 결과 클릭됨 '+$(_GID+'_start').val());
 					 $.ajax({
-						url : $.ctx()+'/algo/seq/1',
+						url : $.ctx()+'/algo/seq/'+that,
 						type : 'post',
 						data : JSON.stringify(data),
 						dateType : 'json',
 						contentType : "application/json",
 						success : d=>{
 							alert('넘어온 문제번호:'+d.result);
-							$('#result').html($$.hs({id: 'h_res',size: '2' })
-									.text('결과값: '+d.result));
+							$(_INPUT).empty();
+							$('<h2>결과값 : '+d.result+'</h2>')
+							.appendTo(_INPUT);
 							
 						},
 						error : e=>{
@@ -53,17 +105,24 @@ function sequence(){
 			 $('<span class="label label-warning" style="margin-left: 20px"></span>')
 				.text('리셋')
 				.addClass('cursor')
-				.appendTo('.buttons')
+				.appendTo(_BTN)
 				.click(()=>{
-					$('.form').remove();
-					_sequence.inputForm(j);
-					//_sequence.questions();
-					//_sequence.inputForm();
+					$(_INPUT).empty();
+					$(_sequence.inputForm(x))
+						.appendTo(_INPUT);
 				 });
 		 });
+		 
+
 	 
 	} // call back
 	
+/*	 
+			 $(str).appendTo('#right_start')
+			 $('#question').attr('id','question_'+j.id);
+			 $('#question_'+j.id).text(j.val);
+			 $('.buttons').empty();
+			_sequence.inputForm(j); */
 
 
 var _sequence = {
@@ -72,38 +131,22 @@ var _sequence = {
 			 $('#rm_start').before('<div id="del_start"/>')
 			 $('#rm_end').after('<div id="del_end"/>')
 			 $('#del_start').nextUntil('#del_end').remove();
+			 $('#new_div').remove();
+			 $('#right_end').remove();
 		},
 		
-		 nav : ()=>{
-			 $('#nav').children().eq(0).html($$.a({id:'seq', url:'#'}).text('수열'))
-			 $('#nav').children().eq(1).html($$.a({id:'math', url:'#'}).text('수학'))
-			 $('#nav').children().eq(2).html($$.a({id:'sort', url:'#'}).text('배열'))
-			 $('#nav').children().eq(3).html($$.a({id:'coll', url:'#'}).text('자료구조'))
-			 $('#nav').append($$.li({id:'', value:''}))
-			 		  	.children().eq(4).html($$.a({id:'app', url:'#'}).text('응용'));
-		},
+		
 		
 		 inputForm : (x)=>{
-			$('p#result').html($$.form({id:'form_'+x.id}));
-			 	$('form#form_'+x.id).html($$.div({id: 'div_1'}).addClass('form-group'));
-				$('div#div_1').html($$.label({name: 'lab_1'}).text('시작값 :'))
-							.append($$.input({type:'text', id: 'start'}));
-				$('form#form_'+x.id).append($$.div({id: 'div_2'}).addClass('form-group'));
-				$('div#div_2').html($$.label({name: 'lab_2'}).text('한계값 :'))
-							.append($$.input({type:'text', id: 'end'}));
-				$('form#form_'+x.id).append($$.div({id: 'div_3'}).addClass('form-group'));	
-				$('div#div_3').html($$.label({name: 'lab_3'}).text('공차 :'))
-							.append($$.input({type:'text', id: 'diff'}));
-				
-		},
-
-		 questions : (x)=>{
-			 $('#question').text(x);
-			 	/*_sequence.inputForm();*/
-			/* $('#reset_btn').text('리셋').addClass('cursor').click(()=>{
-				 _sequence.inputForm();
-			 });*/
+			 let html = '<form>';
+				$.each(x, (i, j)=>{
+					html += '<div class="fomr-group">';
+					html += '<label for="">'+j.txt+' :</label>';
+					html += '<input type="text" id="'+j.id+'"></div>';
+				});	
+				html += '</form>';
+				return html;
+			 
 		}
-		
-		
+
 }; //end

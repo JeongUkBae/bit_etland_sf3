@@ -10,14 +10,16 @@ algo = (()=>{
 		
 		setContentView();
 	};
-	let setContentView =()=>{
+	let setContentView =(x)=>{
 		$.when(
 			$.getScript($.js()+'/component/compo.js'),
-			$.getScript($.js()+'/algorithm/sequence.js')	
+			$.getScript($.js()+'/algorithm/sequence.js'),
+			$.getScript($.js()+'/algorithm/math.js')	
 		).done(()=>{
+			$$.nav();
 			sequence();
-				
-				
+
+	
 			}
 		);  
 	};
